@@ -8,6 +8,8 @@
 
 #include "FaceDetector.hpp"
 
+#include <stdio.h>
+
 using namespace cv;
 using namespace std;
 
@@ -18,7 +20,8 @@ namespace gm
         m_cascade = std::make_shared<cv::CascadeClassifier>();
         m_cascade->load(_detector_path.c_str());
     }
-    
+
+#ifdef TARGET_OS_X
     void FaceDetector::executeVideoCapture()
     {
         cv::VideoCapture cap;
@@ -49,7 +52,7 @@ namespace gm
             cv::waitKey(10);
         }
     }
-
+#endif
     void FaceDetector::processImage(cv::Mat &_image)
     {
         

@@ -11,8 +11,6 @@
 
 #import <opencv2/opencv.hpp>
 
-#include <stdio.h>
-
 namespace gm
 {
 
@@ -20,9 +18,10 @@ class FaceDetector
 {
 public:
     FaceDetector(std::string _detector_path);
+#ifdef TARGET_OS_X
     void executeVideoCapture();
+#endif
     void processImage(cv::Mat &_image);
-    
     std::shared_ptr<cv::CascadeClassifier> m_cascade;
 };
 }
