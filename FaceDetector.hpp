@@ -8,7 +8,7 @@
 
 #ifndef FaceDetector_hpp
 #define FaceDetector_hpp
-
+#import "TargetConditionals.h"
 #import <opencv2/opencv.hpp>
 
 namespace gm
@@ -18,7 +18,7 @@ class FaceDetector
 {
 public:
     FaceDetector(std::string _detector_path);
-#ifdef TARGET_OS_X
+#if TARGET_OS_MAC
     void executeVideoCapture();
 #endif
     void processImage(cv::Mat &_image);

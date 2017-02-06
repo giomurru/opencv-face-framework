@@ -21,7 +21,7 @@ namespace gm
         m_cascade->load(_detector_path.c_str());
     }
 
-#ifdef TARGET_OS_X
+#if TARGET_OS_MAC
     void FaceDetector::executeVideoCapture()
     {
         cv::VideoCapture cap;
