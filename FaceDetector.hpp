@@ -18,7 +18,7 @@ class FaceDetector
 {
 public:
     FaceDetector(std::string _detector_path);
-#if TARGET_OS_MAC
+#if !TARGET_OS_IPHONE
     void executeVideoCapture();
 #endif
     void processImage(cv::Mat &_image);

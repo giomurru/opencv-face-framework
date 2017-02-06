@@ -21,7 +21,7 @@ namespace gm
         m_cascade->load(_detector_path.c_str());
     }
 
-#if TARGET_OS_MAC
+#if !TARGET_OS_IPHONE
     void FaceDetector::executeVideoCapture()
     {
         cv::VideoCapture cap;
